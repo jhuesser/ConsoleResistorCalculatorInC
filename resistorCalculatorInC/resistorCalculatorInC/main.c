@@ -17,33 +17,32 @@ int errorHandler(int errNmb, char errMsg[]) {
     return 0;
 }
 
-
-const char * getFirstColor() {
+char* getFirstColor() {
     
-    const char* firstColor;
+     char firstColor;
     int isErrorOccured;
     printf("Please write the color of your first ring in english: \n");
     scanf("%s",&firstColor);
     
     //why C, oh why my dear C you don't have a switch for strings / chars...? I hate you.
     
-    if (strcmp(firstColor, "brown") == 0) {
+    if (strcmp(&firstColor, "brown") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "red") == 0) {
+    } else if (strcmp(&firstColor, "red") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "orange") == 0) {
+    } else if (strcmp(&firstColor, "orange") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "yellow") == 0) {
+    } else if (strcmp(&firstColor, "yellow") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "green") == 0) {
+    } else if (strcmp(&firstColor, "green") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "blue") == 0) {
+    } else if (strcmp(&firstColor, "blue") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "purple") == 0) {
+    } else if (strcmp(&firstColor, "purple") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "grey") == 0) {
+    } else if (strcmp(&firstColor, "grey") == 0) {
         isErrorOccured = 0;
-    } else if (strcmp(firstColor, "white") == 0) {
+    } else if (strcmp(&firstColor, "white") == 0) {
         isErrorOccured = 0;
     } else {
         
@@ -56,7 +55,7 @@ const char * getFirstColor() {
     }
     
     
-    return firstColor;
+    return &firstColor;
 }
 
 
@@ -68,7 +67,7 @@ int main(int argc, const char * argv[]) {
     int nmbOfRings;
     //request value for API; needs to be char to include in in POST URL.
     int hasFiveRings;
-    const char* firstColor;
+     //char firstColorName;
     
     //welcome text
     printf("Welcome to Jonas Hüsser's resistor calculator \n");
@@ -95,8 +94,11 @@ int main(int argc, const char * argv[]) {
         
     }
         
-    firstColor = getFirstColor();
+    char firstColorName = *getFirstColor();
     
+    
+    
+    printf("%c", firstColorName);
     
     
     
