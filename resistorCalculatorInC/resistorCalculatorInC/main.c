@@ -14,7 +14,7 @@ int errorHandler(int errNmb, char errMsg[]) {
     printf("Error %i: %s \n", errNmb, errMsg);
     
     main();
-    return 0;
+    return errNmb;
 }
 
 
@@ -84,7 +84,7 @@ char* getColorValues(int colorNmb){
             colorValue = "white";
             break;
         default:
-            printf("This color is invalid");
+            errorHandler(102, "This color is invalid");
             
             break;
     }
@@ -238,7 +238,7 @@ int main(int argc, const char * argv[]) {
         hasFiveRings = 1;
     } else {
         
-        errorHandler(102, "Invalid number of rings");
+        errorHandler(103, "Invalid number of rings");
         
     }
         
