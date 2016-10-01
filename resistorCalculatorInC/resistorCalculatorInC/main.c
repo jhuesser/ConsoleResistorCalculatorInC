@@ -17,48 +17,192 @@ int errorHandler(int errNmb, char errMsg[]) {
     return 0;
 }
 
-char* getFirstColor() {
+
+void listColors() {
     
-     char firstColor;
-    int isErrorOccured;
-    printf("Please write the color of your first ring in english: \n");
-    scanf("%s",&firstColor);
+    printf("[1] no color\n");
+    printf("[2] silver\n");
+    printf("[3] gold\n");
+    printf("[4] black\n");
+    printf("[5] brown\n");
+    printf("[6] red\n");
+    printf("[7] orange\n");
+    printf("[8] yellow\n");
+    printf("[9] green\n");
+    printf("[10] blue\n");
+    printf("[11] purple\n");
+    printf("[12] grey\n");
+    printf("[13] white\n");
     
-    //why C, oh why my dear C you don't have a switch for strings / chars...? I hate you.
     
-    if (strcmp(&firstColor, "brown") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "red") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "orange") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "yellow") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "green") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "blue") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "purple") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "grey") == 0) {
-        isErrorOccured = 0;
-    } else if (strcmp(&firstColor, "white") == 0) {
-        isErrorOccured = 0;
-    } else {
-        
-        isErrorOccured = 1;
+    
+    
+}
+
+char* getColorValues(int colorNmb){
+    
+    char* colorValue;
+    
+    switch (colorNmb) {
+        case 1:
+            colorValue = "no-color";
+            break;
+        case 2:
+            colorValue = "silver";
+            break;
+        case 3:
+            colorValue = "gold";
+            break;
+        case 4:
+            colorValue = "black";
+            break;
+        case 5:
+            colorValue = "brown";
+            break;
+        case 6:
+            colorValue = "red";
+            break;
+        case 7:
+            colorValue = "orange";
+            break;
+        case 8:
+            colorValue = "yellow";
+            break;
+        case 9:
+           colorValue = "green";
+            break;
+        case 10:
+            colorValue = "blue";
+            break;
+        case 11:
+            colorValue = "purple";
+            break;
+        case 12:
+            colorValue = "grey";
+            break;
+        case 13:
+            colorValue = "white";
+            break;
+        default:
+            printf("This color is invalid");
+            
+            break;
     }
     
+    return colorValue;
     
-    if (isErrorOccured == 1) {
-        errorHandler(101, "This color can't be at this position");
-    }
-    
-    
-    return &firstColor;
 }
 
 
+char* getFirstColor() {
+    
+    char* firstColor;
+    int colorNmb;
+    
+    printf("Please type the number of the color of the first ring\n");
+    listColors();
+    scanf("%d",&colorNmb);
+    
+
+    
+    firstColor = getColorValues(colorNmb);
+    
+    
+    
+    return firstColor;
+    
+}
+
+
+char* getSecondColor() {
+    
+    char* secondColor;
+    int colorNmb;
+    
+    printf("Please type the number of the color of the second ring\n");
+    listColors();
+    scanf("%d",&colorNmb);
+    
+    
+    
+    secondColor = getColorValues(colorNmb);
+    
+    
+    
+    return secondColor;
+    
+}
+
+
+char* getThirdColor() {
+    
+    char* thirdColor;
+    int colorNmb;
+    
+    printf("Please type the number of the color of the third ring\n");
+    listColors();
+    scanf("%d",&colorNmb);
+    
+    
+    
+    thirdColor = getColorValues(colorNmb);
+    
+    
+    
+    return thirdColor;
+    
+}
+
+
+char* getFourthColor() {
+    
+    char* fourthColor;
+    int colorNmb;
+    
+    printf("Please type the number of the color of the 4th ring\n");
+    listColors();
+    scanf("%d",&colorNmb);
+    
+    
+    
+    fourthColor = getColorValues(colorNmb);
+    
+    
+    
+    return fourthColor;
+    
+}
+
+
+char* getFifthColor() {
+    
+    char* fifthColor;
+    int colorNmb;
+    
+    printf("Please type the number of the color of the 5th ring\n");
+    listColors();
+    scanf("%d",&colorNmb);
+    
+    
+    
+    fifthColor = getColorValues(colorNmb);
+    
+    
+    
+    return fifthColor;
+    
+}
+
+char* setupAPIcall(const char *color1, const char *color2, const char *color3, const char *color4, const char *color5) {
+    
+    char *callURL;
+    char* rootURL = "https://api.widerstandsberechner.ch/api.php?";
+    
+    strcpy(callURL, rootURL);
+    
+    
+    return callURL;
+}
 
 
 int main(int argc, const char * argv[]) {
@@ -68,7 +212,11 @@ int main(int argc, const char * argv[]) {
     //request value for API; needs to be char to include in in POST URL.
     int hasFiveRings;
      //char firstColorName;
-    
+    char* firstColor;
+    char* secondColor;
+    char* thirdColor;
+    char* fourthColor;
+    char* fifthColor;
     //welcome text
     printf("Welcome to Jonas Hüsser's resistor calculator \n");
     //seperator
@@ -94,11 +242,34 @@ int main(int argc, const char * argv[]) {
         
     }
         
-    char firstColorName = *getFirstColor();
+    
+    firstColor = getFirstColor();
+    secondColor = getSecondColor();
+    thirdColor = getThirdColor();
+    fourthColor = getFourthColor();
+    if (hasFiveRings == 1) {
+        fifthColor = getFifthColor();
+    } else {
+        firstColor = 0;
+        
+    }
     
     
     
-    printf("%c", firstColorName);
+    
+    char* apiCall;
+    
+    apiCall = setupAPIcall(firstColor, secondColor, thirdColor, fourthColor, firstColor);
+    
+    printf("%s", apiCall);
+    
+    
+   
+    
+    
+   
+    
+   
     
     
     
