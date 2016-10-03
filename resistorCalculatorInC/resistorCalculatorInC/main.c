@@ -192,14 +192,23 @@ char* getFifthColor() {
     return fifthColor;
     
 }
+/*
+char* concat(const char *s1, const char *s2)
+{
+    char *result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the zero-terminator
+    //in real code you would check for errors in malloc here
+    strcpy(result, s1);
+    strcat(result, s2);
+    return result;
+}
+*/
 
 char* setupAPIcall(const char *color1, const char *color2, const char *color3, const char *color4, const char *color5) {
     
-    char *callURL;
+    char callURL[500];
     char* rootURL = "https://api.widerstandsberechner.ch/api.php?";
     
-    strcpy(callURL, rootURL);
-    
+    sprintf(callURL, "%sfirstcolor=%s&secondcolor=%s&thirdcolor=%s&fourthcolor=%s&fifthcolor=%s&resultInText=1", rootURL, color1, color2, color3, color4, color5);
     
     return callURL;
 }
