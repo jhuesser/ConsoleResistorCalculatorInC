@@ -6,7 +6,7 @@
 //  Check LICENCE file for the licence
 //
 //  For API documentation check https://github.com/jhuesser/ResistorCalculatorAPI
-//  This project is aviable at https://github.com/jheusser/ConsoleResistorCalculatorInC
+//  This project is aviable at https://github.com/jhuesser/ConsoleResistorCalculatorInC
 //
 
 #include <stdio.h>
