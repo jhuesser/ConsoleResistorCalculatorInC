@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD86C1DF1DA57FC400C39D93 /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD86C1DE1DA57FC400C39D93 /* libcurl.4.dylib */; };
-		DDC9A0201D9C3A8E008E44D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9A01F1D9C3A8E008E44D7 /* main.c */; };
+		DD86C1DD1DA57D1400C39D93 /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD86C1DC1DA57D1400C39D93 /* libcurl.4.dylib */; };
+		DDC9A0331DA2CA18008E44D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DDC9A0321DA2CA18008E44D7 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DDC9A01A1D9C3A8E008E44D7 /* CopyFiles */ = {
+		DDC9A02D1DA2CA18008E44D7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,114 +24,114 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DD86C1DE1DA57FC400C39D93 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcurl.4.dylib; sourceTree = "<group>"; };
-		DDC9A01C1D9C3A8E008E44D7 /* resistorCalculatorInC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = resistorCalculatorInC; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDC9A01F1D9C3A8E008E44D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DD86C1DC1DA57D1400C39D93 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcurl.4.dylib; sourceTree = "<group>"; };
+		DDC9A02F1DA2CA18008E44D7 /* rescalctest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rescalctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC9A0321DA2CA18008E44D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DDC9A0191D9C3A8E008E44D7 /* Frameworks */ = {
+		DDC9A02C1DA2CA18008E44D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD86C1DF1DA57FC400C39D93 /* libcurl.4.dylib in Frameworks */,
+				DD86C1DD1DA57D1400C39D93 /* libcurl.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DDC9A0131D9C3A8E008E44D7 = {
+		DDC9A0261DA2CA18008E44D7 = {
 			isa = PBXGroup;
 			children = (
-				DDC9A01E1D9C3A8E008E44D7 /* resistorCalculatorInC */,
-				DDC9A01D1D9C3A8E008E44D7 /* Products */,
-				DD86C1DE1DA57FC400C39D93 /* libcurl.4.dylib */,
+				DDC9A0311DA2CA18008E44D7 /* rescalctest */,
+				DDC9A0301DA2CA18008E44D7 /* Products */,
+				DD86C1DC1DA57D1400C39D93 /* libcurl.4.dylib */,
 			);
 			sourceTree = "<group>";
 		};
-		DDC9A01D1D9C3A8E008E44D7 /* Products */ = {
+		DDC9A0301DA2CA18008E44D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDC9A01C1D9C3A8E008E44D7 /* resistorCalculatorInC */,
+				DDC9A02F1DA2CA18008E44D7 /* rescalctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DDC9A01E1D9C3A8E008E44D7 /* resistorCalculatorInC */ = {
+		DDC9A0311DA2CA18008E44D7 /* rescalctest */ = {
 			isa = PBXGroup;
 			children = (
-				DDC9A01F1D9C3A8E008E44D7 /* main.c */,
+				DDC9A0321DA2CA18008E44D7 /* main.c */,
 			);
-			path = resistorCalculatorInC;
+			path = rescalctest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDC9A01B1D9C3A8E008E44D7 /* resistorCalculatorInC */ = {
+		DDC9A02E1DA2CA18008E44D7 /* rescalctest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDC9A0231D9C3A8E008E44D7 /* Build configuration list for PBXNativeTarget "resistorCalculatorInC" */;
+			buildConfigurationList = DDC9A0361DA2CA18008E44D7 /* Build configuration list for PBXNativeTarget "rescalctest" */;
 			buildPhases = (
-				DDC9A0181D9C3A8E008E44D7 /* Sources */,
-				DDC9A0191D9C3A8E008E44D7 /* Frameworks */,
-				DDC9A01A1D9C3A8E008E44D7 /* CopyFiles */,
+				DDC9A02B1DA2CA18008E44D7 /* Sources */,
+				DDC9A02C1DA2CA18008E44D7 /* Frameworks */,
+				DDC9A02D1DA2CA18008E44D7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = resistorCalculatorInC;
-			productName = resistorCalculatorInC;
-			productReference = DDC9A01C1D9C3A8E008E44D7 /* resistorCalculatorInC */;
+			name = rescalctest;
+			productName = rescalctest;
+			productReference = DDC9A02F1DA2CA18008E44D7 /* rescalctest */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DDC9A0141D9C3A8E008E44D7 /* Project object */ = {
+		DDC9A0271DA2CA18008E44D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Jonas Hüsser";
 				TargetAttributes = {
-					DDC9A01B1D9C3A8E008E44D7 = {
+					DDC9A02E1DA2CA18008E44D7 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = J2L32E7XZZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = DDC9A0171D9C3A8E008E44D7 /* Build configuration list for PBXProject "resistorCalculatorInC" */;
+			buildConfigurationList = DDC9A02A1DA2CA18008E44D7 /* Build configuration list for PBXProject "rescalctest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = DDC9A0131D9C3A8E008E44D7;
-			productRefGroup = DDC9A01D1D9C3A8E008E44D7 /* Products */;
+			mainGroup = DDC9A0261DA2CA18008E44D7;
+			productRefGroup = DDC9A0301DA2CA18008E44D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDC9A01B1D9C3A8E008E44D7 /* resistorCalculatorInC */,
+				DDC9A02E1DA2CA18008E44D7 /* rescalctest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DDC9A0181D9C3A8E008E44D7 /* Sources */ = {
+		DDC9A02B1DA2CA18008E44D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDC9A0201D9C3A8E008E44D7 /* main.c in Sources */,
+				DDC9A0331DA2CA18008E44D7 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		DDC9A0211D9C3A8E008E44D7 /* Debug */ = {
+		DDC9A0341DA2CA18008E44D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -178,7 +178,7 @@
 			};
 			name = Debug;
 		};
-		DDC9A0221D9C3A8E008E44D7 /* Release */ = {
+		DDC9A0351DA2CA18008E44D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +218,7 @@
 			};
 			name = Release;
 		};
-		DDC9A0241D9C3A8E008E44D7 /* Debug */ = {
+		DDC9A0371DA2CA18008E44D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = J2L32E7XZZ;
@@ -230,7 +230,7 @@
 			};
 			name = Debug;
 		};
-		DDC9A0251D9C3A8E008E44D7 /* Release */ = {
+		DDC9A0381DA2CA18008E44D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = J2L32E7XZZ;
@@ -245,25 +245,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDC9A0171D9C3A8E008E44D7 /* Build configuration list for PBXProject "resistorCalculatorInC" */ = {
+		DDC9A02A1DA2CA18008E44D7 /* Build configuration list for PBXProject "rescalctest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDC9A0211D9C3A8E008E44D7 /* Debug */,
-				DDC9A0221D9C3A8E008E44D7 /* Release */,
+				DDC9A0341DA2CA18008E44D7 /* Debug */,
+				DDC9A0351DA2CA18008E44D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDC9A0231D9C3A8E008E44D7 /* Build configuration list for PBXNativeTarget "resistorCalculatorInC" */ = {
+		DDC9A0361DA2CA18008E44D7 /* Build configuration list for PBXNativeTarget "rescalctest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDC9A0241D9C3A8E008E44D7 /* Debug */,
-				DDC9A0251D9C3A8E008E44D7 /* Release */,
+				DDC9A0371DA2CA18008E44D7 /* Debug */,
+				DDC9A0381DA2CA18008E44D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DDC9A0141D9C3A8E008E44D7 /* Project object */;
+	rootObject = DDC9A0271DA2CA18008E44D7 /* Project object */;
 }

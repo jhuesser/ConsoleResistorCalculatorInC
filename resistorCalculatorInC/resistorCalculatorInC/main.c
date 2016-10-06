@@ -5,19 +5,29 @@
 //  Created by Jonas Hüsser on 28.09.16.
 //  Check LICENCE file for the licence
 //
+//  For API documentation check https://github.com/jhuesser/ResistorCalculatorAPI
+//  This project is aviable at https://github.com/jheusser/ConsoleResistorCalculatorInC
+//
 
 #include <stdio.h>
 #include <string.h>
+#include <curl/curl.h>
 
+
+/*My error handling function
+Used same error numbers like in API*/
 int errorHandler(int errNmb, char errMsg[]) {
     
+    //prints error number and error message
     printf("Error %i: %s \n", errNmb, errMsg);
     
+    //starts program again
     main();
+    //returns error number
     return errNmb;
 }
 
-
+//function to list all colors
 void listColors() {
     
     printf("[1] no color\n");
@@ -39,10 +49,12 @@ void listColors() {
     
 }
 
+//this function checks the input and assigns the number
 char* getColorValues(int colorNmb){
     
     char* colorValue;
     
+    //shitty C doesn't has a switch case for chars. OH I HATE IT!!
     switch (colorNmb) {
         case 1:
             colorValue = "no-color";
@@ -93,6 +105,9 @@ char* getColorValues(int colorNmb){
     
 }
 
+// I've used multiple function, so i can do some error handling later.
+
+//get the first color
 
 char* getFirstColor() {
     
@@ -113,6 +128,7 @@ char* getFirstColor() {
     
 }
 
+//get second color
 
 char* getSecondColor() {
     
@@ -133,6 +149,7 @@ char* getSecondColor() {
     
 }
 
+//get 3rd color
 
 char* getThirdColor() {
     
@@ -153,6 +170,7 @@ char* getThirdColor() {
     
 }
 
+//get 4th color
 
 char* getFourthColor() {
     
@@ -174,6 +192,8 @@ char* getFourthColor() {
 }
 
 
+//get 5th color
+
 char* getFifthColor() {
     
     char* fifthColor;
@@ -191,28 +211,37 @@ char* getFifthColor() {
     
     return fifthColor;
     
+    
+    
+    
+    
 }
+
+//maybe enable this in the future. but just maybe
+
 /*
-char* concat(const char *s1, const char *s2)
-{
-    char *result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the zero-terminator
-    //in real code you would check for errors in malloc here
-    strcpy(result, s1);
-    strcat(result, s2);
-    return result;
+void calculateResultViaAPI(char* callURL) {
+    
+    
+    CURL *hnd = curl_easy_init();
+    
+    curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_easy_setopt(hnd, CURLOPT_URL, callURL);
+    
+    struct curl_slist *headers = NULL;
+    headers = curl_slist_append(headers, "postman-token: 0303ff27-260e-52ca-77f4-8a98089355c7");
+    headers = curl_slist_append(headers, "cache-control: no-cache");
+    headers = curl_slist_append(headers, "as-key: eh3X9PIiWPo5jlFkebMR");
+    curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
+    
+    CURLcode ret = curl_easy_perform(hnd);
+    
 }
+
 */
 
-char* setupAPIcall(const char *color1, const char *color2, const char *color3, const char *color4, const char *color5) {
-    
-    char callURL[500];
-    char* rootURL = "https://api.widerstandsberechner.ch/api.php?";
-    
-    sprintf(callURL, "%sfirstcolor=%s&secondcolor=%s&thirdcolor=%s&fourthcolor=%s&fifthcolor=%s&resultInText=1", rootURL, color1, color2, color3, color4, color5);
-    
-    return callURL;
-}
 
+//the main functions
 
 int main(int argc, const char * argv[]) {
     
@@ -220,7 +249,7 @@ int main(int argc, const char * argv[]) {
     int nmbOfRings;
     //request value for API; needs to be char to include in in POST URL.
     int hasFiveRings;
-     //char firstColorName;
+    
     char* firstColor;
     char* secondColor;
     char* thirdColor;
@@ -246,12 +275,12 @@ int main(int argc, const char * argv[]) {
         //if it has 5 rings
         hasFiveRings = 1;
     } else {
-        
+        //sends en error message.
         errorHandler(103, "Invalid number of rings");
         
     }
         
-    
+    //get the colors.
     firstColor = getFirstColor();
     secondColor = getSecondColor();
     thirdColor = getThirdColor();
@@ -265,23 +294,46 @@ int main(int argc, const char * argv[]) {
     
     
     
+    //i hate C. I want strings. I WANT STRINGS!!!
+    char apiCall[1000];
     
-    char* apiCall;
+    //the root URL of my API
+    char* rootURL = "https://api.widerstandsberechner.ch/api.php?";
     
-    apiCall = setupAPIcall(firstColor, secondColor, thirdColor, fourthColor, firstColor);
-    
-    printf("%s", apiCall);
-    
-    
-   
-    
+    //put togheter the call URL
+    sprintf(apiCall, "%sfirstcolor=%s&secondcolor=%s&thirdcolor=%s&fourthcolor=%s&fifthcolor=%s&resultInText=1", rootURL, firstColor, secondColor, thirdColor, fourthColor, fifthColor);
     
    
+   //maybe enable this too in the future....
     
+    //calculateResultViaAPI(apiCall);
+
+    
+    // HERE IS WERE THE MAGIC HAPPENS GUYS!
    
+    //value for the HTTP request.
+    CURL *hnd = curl_easy_init();
     
+    //define request type. (API works with GET and POST)
+    curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "POST");
+    //set the URL for the HTTP POST request
+    curl_easy_setopt(hnd, CURLOPT_URL, apiCall);
     
+    //define the HTTP headers
+    struct curl_slist *headers = NULL;
+    //need no cache
+    headers = curl_slist_append(headers, "cache-control: no-cache");
+    //headers = curl_slist_append(headers, "as-key: eh3X9PIiWPo5jlFkebMR");
     
+    //complete the final request
+    curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
+    
+    //make the request. ret is the return code, but don't need that.
+    CURLcode ret = curl_easy_perform(hnd);
+   
+    //print new line
+    
+    printf("\n");
     
     return 0;
 }
