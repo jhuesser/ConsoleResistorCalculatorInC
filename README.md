@@ -15,4 +15,4 @@ You need [libCURL](https://curl.haxx.se/libcurl/).
 ## Is it working?
 Yes see:
 
-![Screenshot](https://widerstansberechner.ch/Images/work.png)
+![Screenshot](https://widerstandsberechner.ch/images/work.png)
