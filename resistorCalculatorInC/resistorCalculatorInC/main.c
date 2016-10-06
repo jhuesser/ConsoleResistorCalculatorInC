@@ -8,6 +8,10 @@
 //  For API documentation check https://github.com/jhuesser/ResistorCalculatorAPI
 //  This project is aviable at https://github.com/jhuesser/ConsoleResistorCalculatorInC
 //
+//  This is a school project.
+//  During coding this I screamed more "fuck" than Billy Joe Armstrong in this video:url.jhuesser.ch/TotalFucksCounted_22
+//
+
 
 #include <stdio.h>
 #include <string.h>
@@ -337,3 +341,6 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+/* wow i did it. wow it was fun. totally. great let's to this in swift. it can handle strings. that's good.
+ Why I choose C? well my teacher did. */
